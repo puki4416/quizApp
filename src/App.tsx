@@ -1,11 +1,10 @@
 import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
 import Home from "./page/Home";
 import Quiz from "./page/Quiz";
 import Result from "./page/Result";
 import ReviewNote from "./page/ReviewNote";
-import PrivateRoute from "./privateRoute";
+import PrivateRoute from "./PrivateRoute";
 import { ReducerType } from "./store";
 
 function App() {
