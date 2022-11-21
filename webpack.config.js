@@ -9,7 +9,7 @@ module.exports = {
     main: "./src/index.tsx",
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: [".tsx", ".ts", ".js", ".css"],
   },
   module: {
     rules: [

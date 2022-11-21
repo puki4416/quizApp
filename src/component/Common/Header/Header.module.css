@@ -1,0 +1,17 @@
+.mainBlock {
+  width: calc(100% - 30px);
+  padding: 15px;
+  background: skyblue;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.navigation {
+  margin: 0 0 0 20px;
+}
