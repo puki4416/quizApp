@@ -1,0 +1,18 @@
+.mainBlock {
+  padding: 10px;
+}
+
+.question {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+
+.answer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.correct {
+  color: red;
+}
