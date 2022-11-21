@@ -1,5 +1,5 @@
 import { all, call, put, takeLeading } from "redux-saga/effects";
-import { timer } from "../../lib/busnessFn/asyncWork";
+import { timer } from "../../lib/businessFn/asyncWork";
 import { correctQuiz, wrongQuiz } from "../quizResult/reducer";
 import { setEnd } from "./reducer";
 

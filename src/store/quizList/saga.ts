@@ -6,8 +6,8 @@ import {
 } from "./reducer";
 import { startQuiz } from "../quizResult/reducer";
 import { setProgress } from "../quizStatus/reducer";
-import { axiosGetQuizList } from "../../lib/busnessFn/asyncWork";
-import { makeAnswers } from "../../lib/busnessFn/makeAnswers";
+import { axiosGetQuizList } from "../../lib/businessFn/asyncWork";
+import { makeAnswers } from "../../lib/businessFn/makeAnswers";
 
 interface QuizApiData {
   response_code: 0;
