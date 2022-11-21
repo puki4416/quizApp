@@ -1,0 +1,25 @@
+.mainBlock {
+  border-radius: 5px;
+  border: 1px solid skyblue;
+  width: 580px;
+  margin: 0 0 20px 0;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.wrong {
+  color: white;
+  background-color: red;
+  border: 1px solid red;
+}
+
+.correct {
+  color: white;
+  background-color: #024bad;
+  border: 1px solid #024bad;
+}
