@@ -1,0 +1,6 @@
+.mainBlock {
+  display: flex;
+  gap: 10px;
+  background-color: #eaeaea;
+  padding: 10px;
+}
