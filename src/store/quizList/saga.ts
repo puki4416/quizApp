@@ -50,6 +50,7 @@ export function* getServerQuizList(action: {
     yield action.payload.navigate("/quiz");
   } catch (error) {
     yield put(getQuizListFailure());
+    yield window.alert("알수없는 에러가 발생하였습니다 다시 시도해주세요");
   }
 }
 
