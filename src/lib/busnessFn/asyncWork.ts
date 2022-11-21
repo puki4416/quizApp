@@ -13,3 +13,10 @@ export const axiosGetQuizList = ({
     `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`
   );
 };
+
+export const timer = (time: number) =>
+  new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(1);
+    }, time);
+  });
