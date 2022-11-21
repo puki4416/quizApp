@@ -1,0 +1,14 @@
+.mainBlock {
+  border-radius: 5px;
+  width: 580px;
+  margin: 40px 0 0 0;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5;
+  padding: 10px;
+  background-color: skyblue;
+  color: white;
+  cursor: pointer;
+}
