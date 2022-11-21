@@ -1,0 +1,16 @@
+.mainBlock {
+  width: 600px;
+  height: 60px;
+  background: black;
+  border-radius: 10px;
+  border: 1px solid gray;
+  font-size: 25px;
+  font-weight: 600;
+  color: white;
+  margin: 30px 0 0 0;
+  cursor: pointer;
+}
+
+.mainBlock:hover {
+  opacity: 0.7;
+}
