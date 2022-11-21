@@ -9,7 +9,7 @@ module.exports = {
     main: "./src/index.tsx",
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js", ".css"],
+    extensions: [".tsx", ".ts", ".js", ".css", ".jsx"],
   },
   module: {
     rules: [
@@ -23,7 +23,7 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.jpg$/,
+        test: /\.(jpg|gif)$/,
         use: [
           {
             loader: "file-loader",
