@@ -1,7 +1,9 @@
 import { combineReducers } from "redux";
 import { all } from "redux-saga/effects";
 import quizList from "./quizList/reducer";
-const rootReducer = combineReducers({ quizList });
+import quizResult from "./quizResult/reducer";
+
+const rootReducer = combineReducers({ quizList, quizResult });
 
 export function* rootSaga() {
   yield all([]);
