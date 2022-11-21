@@ -3,13 +3,13 @@ import { timer } from "../../lib/businessFn/asyncWork";
 import { correctQuiz, wrongQuiz } from "../quizResult/reducer";
 import { setEnd } from "./reducer";
 
-export function* showResult(action: { type: string; payload: number }) {
+export function* showResult(action: {
+  type: string;
+  payload: number | undefined;
+}) {
   yield call(timer, 1000);
-  yield put(
-    action.type === "quizStatus/setSuccess"
-      ? correctQuiz()
-      : wrongQuiz(action.payload)
-  );
+  if (action.payload === undefined) yield put(correctQuiz());
+  if (action.payload !== undefined) yield put(wrongQuiz(action.payload));
   yield put(setEnd());
 }
 
