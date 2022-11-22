@@ -6,10 +6,14 @@ const mockedUsedNavigate = jest.fn();
 jest.mock("react-router-dom", () => ({
   useNavigate: () => mockedUsedNavigate,
 }));
-
-window.history.pushState = jest.fn();
+const mockedPushState = jest.fn();
+window.history.pushState = mockedPushState;
 window.addEventListener = jest.fn();
 window.removeEventListener = jest.fn();
+
+afterEach(() => {
+  mockedPushState.mockClear();
+});
 
 describe("usePreventBack Hook 테스트", () => {
   it("초기 세팅", () => {
