@@ -12,13 +12,14 @@ const useSaveWrong = ({ wrongNumbers, quizList }: useSaveWrongProps) => {
     const output = localStorage.getItem("wrongQuiz");
     const arr = output !== null ? JSON.parse(output) : [];
     const newWrongAnswers = wrongNumbers
-      .map((number) => ({ ...quizList[number], count: 1 }))
+      .map((number) => ({ ...quizList[number], count: 1, date: new Date() }))
       .filter((quiz) => {
         let flag = true;
         arr.forEach(({ question }: any, index: number) => {
           if (decode(question) === quiz.question) {
             flag = false;
             arr[index].count += 1;
+            arr[index].date = new Date();
           }
         });
         return flag;

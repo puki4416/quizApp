@@ -3,6 +3,7 @@ import { QuizContentState } from "../../store/quizList/reducer";
 
 interface QuizReview extends QuizContentState {
   count: string;
+  date: Date;
 }
 
 const useReview = () => {
