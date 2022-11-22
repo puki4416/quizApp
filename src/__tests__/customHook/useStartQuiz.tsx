@@ -37,7 +37,7 @@ describe("useStartQuiz 테스트", () => {
     result.current();
     expect(mockStore.getActions()[0]).toEqual({
       payload: {
-        amount: 10,
+        amount: "10",
         category: "testCategory",
         difficulty: "easy",
         navigate: mockedUsedNavigate,
