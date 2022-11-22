@@ -28,9 +28,18 @@ class LocalStorageMock {
   }
 }
 
+beforeAll(() => {
+  jest.useFakeTimers();
+  jest.setSystemTime(new Date(2020, 3, 1));
+});
+
+afterAll(() => {
+  jest.useRealTimers();
+});
+
 window.localStorage = new LocalStorageMock() as unknown as Storage;
 
-describe("useReview Hook 테스트", () => {
+describe("useSaveWrong Hook 테스트", () => {
   it("local스토리지에 중복된 오답이 없는 경우", () => {
     renderHook(() =>
       useSaveWrong({
@@ -44,7 +53,7 @@ describe("useReview Hook 테스트", () => {
       })
     );
     expect(localStorage.getItem("wrongQuiz")).toEqual(
-      JSON.stringify([{ question: "test1", count: 1 }])
+      JSON.stringify([{ question: "test1", count: 1, date: new Date() }])
     );
   });
   it("local스토리지에 중복된 오답이 있는 경우", () => {
@@ -60,7 +69,7 @@ describe("useReview Hook 테스트", () => {
       })
     );
     expect(localStorage.getItem("wrongQuiz")).toEqual(
-      JSON.stringify([{ question: "test1", count: 2 }])
+      JSON.stringify([{ question: "test1", count: 2, date: new Date() }])
     );
   });
 });
