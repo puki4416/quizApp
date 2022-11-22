@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Chart from "../Chart/Chart";
 import useSaveWrong from "../../../lib/customHook/useSaveWrong";
 import TextInfo from "../TextInfo/TextInfo";
+import useInitial from "../../../lib/customHook/useInitialization";
 
 const Body = () => {
   const result = useSelector((state: ReducerType) => state.quizResult);
@@ -13,7 +14,7 @@ const Body = () => {
     (state: ReducerType) => state.quizList.content
   ) as QuizContentState[];
   useSaveWrong({ wrongNumbers: result.wrongNumbers, quizList });
-
+  useInitial(true);
   return (
     <div className={styles.mainBlock}>
       <div className={styles.title}>퀴즈결과</div>

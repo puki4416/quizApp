@@ -1,9 +1,5 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import {
-  initializeQuizList,
-  QuizContentState,
-} from "../../store/quizList/reducer";
+import { QuizContentState } from "../../store/quizList/reducer";
 import { decode } from "html-entities";
 
 interface useSaveWrongProps {
@@ -12,7 +8,6 @@ interface useSaveWrongProps {
 }
 
 const useSaveWrong = ({ wrongNumbers, quizList }: useSaveWrongProps) => {
-  const dispatch = useDispatch();
   useEffect(() => {
     const output = localStorage.getItem("wrongQuiz");
     const arr = output !== null ? JSON.parse(output) : [];
@@ -33,7 +28,6 @@ const useSaveWrong = ({ wrongNumbers, quizList }: useSaveWrongProps) => {
       "wrongQuiz",
       JSON.stringify(arr.concat(newWrongAnswers))
     );
-    dispatch(initializeQuizList());
   }, []);
 };
 
