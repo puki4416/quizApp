@@ -126,4 +126,33 @@ describe("useReview Hook 테스트", () => {
       { difficulty: "hard", answers: [1, 2, 3, 4] },
     ]);
   });
+
+  it("저장된 값을 삭제하는 경우", () => {
+    window.localStorage.setItem(
+      "wrongQuiz",
+      JSON.stringify([
+        { difficulty: "hard", answers: [1, 2, 3, 4] },
+        { difficulty: "medium", answers: [1, 2, 3, 4] },
+        { difficulty: "easy", answers: [1, 2, 3, 4] },
+      ])
+    );
+
+    const { result } = renderHook(() => useReview());
+
+    act(() => {
+      result.current.deleteContent(1);
+    });
+
+    expect(result.current.reviews).toEqual([
+      { difficulty: "hard", answers: [1, 2, 3, 4] },
+      { difficulty: "easy", answers: [1, 2, 3, 4] },
+    ]);
+
+    expect(
+      JSON.parse(window.localStorage.getItem("wrongQuiz") as string)
+    ).toEqual([
+      { difficulty: "hard", answers: [1, 2, 3, 4] },
+      { difficulty: "easy", answers: [1, 2, 3, 4] },
+    ]);
+  });
 });
