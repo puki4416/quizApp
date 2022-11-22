@@ -3,6 +3,13 @@
   margin: 30px auto 50px auto;
 }
 
+@media screen and (max-width: 620px) {
+  .mainBlock {
+    width: calc(100% - 40px);
+    padding: 20px;
+  }
+}
+
 .titleBlock {
   display: flex;
   justify-content: space-between;

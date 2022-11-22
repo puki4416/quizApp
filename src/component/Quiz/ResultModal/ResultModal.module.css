@@ -7,6 +7,15 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 200px;
   padding: 15px;
+  width: 600px;
+  margin: auto;
+}
+
+@media screen and (max-width: 620px) {
+  .mainBlock {
+    width: calc(100% - 40px);
+    padding: 20px;
+  }
 }

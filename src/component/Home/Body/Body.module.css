@@ -6,8 +6,22 @@
   gap: 20px;
 }
 
+@media screen and (max-width: 620px) {
+  .mainBlock {
+    width: calc(100% - 40px);
+    padding: 20px;
+    margin: 0 auto 0 auto;
+  }
+}
+
 .title {
   font-weight: 600;
   font-size: 50px;
   text-align: center;
+}
+
+@media screen and (max-width: 620px) {
+  .title {
+    font-size: 30px;
+  }
 }

@@ -11,9 +11,9 @@ const ResultModal = ({ status }: ResultModalProps) => {
     return (
       <div className={styles.mainBlock}>
         {status === "Success" ? (
-          <BiCircle color="#024bad" size={600} />
+          <BiCircle color="#024bad" size={"80%"} />
         ) : (
-          <ImCross color={"red"} size={500} />
+          <ImCross color={"red"} size={"80%"} />
         )}
       </div>
     );

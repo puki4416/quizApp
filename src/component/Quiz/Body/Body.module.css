@@ -2,3 +2,11 @@
   width: 600px;
   margin: 50px auto 0 auto;
 }
+
+@media screen and (max-width: 620px) {
+  .mainBlock {
+    width: calc(100% - 40px);
+    padding: 20px;
+    margin: 20px auto 0 auto;
+  }
+}

@@ -4,6 +4,12 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 620px) {
+  .select {
+    width: 100%;
+  }
+}
+
 .title {
   margin: 0 0 10px 0;
   font-weight: 500;

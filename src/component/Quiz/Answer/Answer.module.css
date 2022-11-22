@@ -12,6 +12,12 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 620px) {
+  .mainBlock {
+    width: calc(100% - 20px);
+  }
+}
+
 .wrong {
   color: white;
   background-color: red;
