@@ -20,10 +20,12 @@ const Body = () => {
   ) as QuizContentState[];
   const { status } = useSelector((state: ReducerType) => state.quizStatus);
   const [order, setOrder] = useState(0);
+  const [final, setFinal] = useState(false);
   const nextQuestionEventHandler = useNextQuestion({
     order,
     setOrder,
     quizListLength: quizList.length,
+    setFinal,
   });
   const answerEventHadler = useAnswer({
     status,
@@ -32,7 +34,8 @@ const Body = () => {
   });
   usePreventBack({ target: "/quiz" });
   usePreventClose();
-  useInitial();
+  useInitial(final);
+
   return (
     <div className={styles.mainBlock}>
       <Info

@@ -4,15 +4,15 @@ import { initializeQuizList } from "../../store/quizList/reducer";
 import { initializeQuiz } from "../../store/quizResult/reducer";
 import { setWait } from "../../store/quizStatus/reducer";
 
-const useInitial = () => {
+const useInitial = (condition: any) => {
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log("121");
     return () => {
-      console.log("qwqwe");
-      dispatch(initializeQuizList());
-      dispatch(initializeQuiz());
-      dispatch(setWait());
+      if (condition) {
+        dispatch(initializeQuizList());
+        dispatch(initializeQuiz());
+        dispatch(setWait());
+      }
     };
   }, []);
 };
