@@ -15,14 +15,21 @@ describe("useNextQuestion 테스트", () => {
     <Provider store={mockStore}>{children}</Provider>
   );
   it("결과 페이지로 넘어가는 경우", async () => {
+    const mockedSetFinal = jest.fn();
     const { result } = renderHook(
       () =>
-        useNextQuestion({ order: 4, setOrder: jest.fn(), quizListLength: 5 }),
+        useNextQuestion({
+          order: 4,
+          setOrder: jest.fn(),
+          quizListLength: 5,
+          setFinal: mockedSetFinal,
+        }),
       {
         wrapper,
       }
     );
     result.current();
+    expect(mockedSetFinal).toBeCalledWith(true);
     expect(mockedUsedNavigate).toBeCalledWith("/result", { replace: true });
     expect(mockStore.getActions()[0]).toEqual({
       payload: undefined,
@@ -37,6 +44,7 @@ describe("useNextQuestion 테스트", () => {
           order: 1,
           setOrder: setOrderMocked,
           quizListLength: 5,
+          setFinal: jest.fn(),
         }),
       {
         wrapper,
