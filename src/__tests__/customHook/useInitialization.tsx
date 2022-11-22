@@ -4,13 +4,13 @@ import { renderHook } from "@testing-library/react";
 import useInitial from "../../lib/customHook/useInitialization";
 import { ReactNode } from "react";
 
-describe("useAnswer Hook 테스트", () => {
+describe("useInitial Hook 테스트", () => {
   const mockStore = configureMockStore()();
   const wrapper = ({ children }: { children: ReactNode }) => (
     <Provider store={mockStore}>{children}</Provider>
   );
   it("정답이 일치하는 경우", async () => {
-    const { unmount } = renderHook(() => useInitial(), {
+    const { unmount } = renderHook(() => useInitial(true), {
       wrapper,
     });
 
