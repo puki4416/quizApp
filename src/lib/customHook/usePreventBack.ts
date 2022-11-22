@@ -16,13 +16,11 @@ const usePreventBack = ({ target }: usePreventBackProps) => {
     ) {
       navigate(-1);
     } else {
-      console.log(1);
       window.history.pushState(null, "", target);
     }
   }, []);
 
   useEffect(() => {
-    console.log(1);
     window.history.pushState(null, "", target);
     window.addEventListener("popstate", preventGoBack);
     return () => {
