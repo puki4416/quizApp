@@ -39,11 +39,11 @@ const Chart = ({ correctAmount, wrongAmount }: ChartProps) => {
               weight: "bold",
             },
             formatter: (context) => {
-              return (
+              return `${
                 Math.floor(
                   (Number(context) / (correctAmount + wrongAmount)) * 1000
                 ) / 10
-              );
+              }%`;
             },
           },
         },
