@@ -11,10 +11,9 @@ export const makePage = (
       pageUnit
     )
   );
-  console.log(pageBundleOrder, pageCount);
   const pages = new Array(pageCount)
     .fill(0)
     .map((_, index) => index + 1 + pageBundleOrder * 5);
-  console.log(pages);
+
   return pages;
 };

@@ -7,7 +7,7 @@ import SortSelect from "../SortSelect/SortSelect";
 import styles from "./Body.module.css";
 
 const Body = () => {
-  const { reviews, changeSort } = useReview();
+  const { reviews, changeSort, deleteContent } = useReview();
   const selectRef = useRef<HTMLSelectElement>(null);
   const [page, setPage] = useState(1);
   return (
@@ -20,13 +20,15 @@ const Body = () => {
       {!reviews.length ? (
         <p className={styles.noResult}>추가된 오답이 없습니다</p>
       ) : (
-        reviews.slice((page - 1) * 10, page * 10).map((review) => {
+        reviews.slice((page - 1) * 10, page * 10).map((review, index) => {
           return (
             <div key={review.question} className={styles.reviewBlock}>
               <ProblemInfo
                 category={review.category}
                 difficulty={review.difficulty}
                 count={review.count}
+                deleteContent={deleteContent}
+                order={(page - 1) * 10 + index}
               />
               <QuestionAnswer
                 question={review.question}

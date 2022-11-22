@@ -36,6 +36,7 @@ const Pagenation = ({
               className={`${styles.pageButton} ${
                 page === current ? styles.selected : ""
               }`}
+              key={page}
             >
               {page}
             </li>

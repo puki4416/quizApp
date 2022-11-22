@@ -12,7 +12,6 @@ const useReview = () => {
   useLayoutEffect(() => {
     const output = localStorage.getItem("wrongQuiz");
     const arr: QuizReview[] = output !== null ? JSON.parse(output) : [];
-    console.log(arr);
     changeSort("recent", arr);
   }, []);
 
@@ -34,7 +33,16 @@ const useReview = () => {
     setReviews(newReviews);
   };
 
-  return { reviews, changeSort };
+  const deleteContent = (index: number) => {
+    const newReviews = reviews.map((review) => {
+      return { ...review, answers: [...review.answers] };
+    });
+    newReviews.splice(index, 1);
+    setReviews(newReviews);
+    localStorage.setItem("wrongQuiz", JSON.stringify(newReviews));
+  };
+
+  return { reviews, changeSort, deleteContent };
 };
 
 export default useReview;
