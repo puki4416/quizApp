@@ -3,7 +3,7 @@ import styles from "./ProblemInfo.module.css";
 interface InfoProps {
   category: string;
   difficulty: string;
-  count: string;
+  count: number;
 }
 
 const ProblemInfo = ({ category, difficulty, count }: InfoProps) => {
