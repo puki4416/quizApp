@@ -1,5 +1,6 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import useReview from "../../../lib/customHook/useReview";
+import Pagenation from "../Pagenation/Pagenation";
 import ProblemInfo from "../ProblemInfo/ProblemInfo";
 import QuestionAnswer from "../QuestionAnswer/QuestionAnswer";
 import SortSelect from "../SortSelect/SortSelect";
@@ -8,6 +9,7 @@ import styles from "./Body.module.css";
 const Body = () => {
   const { reviews, changeSort } = useReview();
   const selectRef = useRef<HTMLSelectElement>(null);
+  const [page, setPage] = useState(1);
   return (
     <div className={styles.mainBlock}>
       <div className={styles.titleBlock}>
@@ -18,7 +20,7 @@ const Body = () => {
       {!reviews.length ? (
         <p className={styles.noResult}>추가된 오답이 없습니다</p>
       ) : (
-        reviews.map((review) => {
+        reviews.slice((page - 1) * 10, page * 10).map((review) => {
           return (
             <div key={review.question} className={styles.reviewBlock}>
               <ProblemInfo
@@ -35,6 +37,13 @@ const Body = () => {
           );
         })
       )}
+      <Pagenation
+        current={page}
+        totalAmount={reviews.length}
+        contentUnit={10}
+        pageUnit={5}
+        eventHander={setPage}
+      />
     </div>
   );
 };

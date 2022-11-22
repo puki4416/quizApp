@@ -1,0 +1,47 @@
+.mainBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageBlock {
+  display: flex;
+  gap: 10px;
+  margin: 0 5px 0 5px;
+}
+
+.pageButton {
+  width: 27px;
+  height: 27px;
+  font-size: 12px;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  margin-left: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.pageButton:hover {
+  border: 1px solid #a0a0a0;
+}
+
+.selected {
+  background-color: #00aaff;
+  border: 1px solid #00aaff;
+  color: white;
+}
+
+.pageIcon {
+  width: 27px;
+  height: 27px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.ban {
+  cursor: not-allowed;
+  opacity: 0.2;
+}
