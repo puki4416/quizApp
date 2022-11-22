@@ -9,22 +9,26 @@ const Body = () => {
   return (
     <div className={styles.mainBlock}>
       <div className={styles.title}>오답노트</div>
-      {reviews.map((review) => {
-        return (
-          <div key={review.question} className={styles.reviewBlock}>
-            <ProblemInfo
-              category={review.category}
-              difficulty={review.difficulty}
-              count={review.count}
-            />
-            <QuestionAnswer
-              question={review.question}
-              answers={review.answers}
-              correctAnswer={review.correctAnswer}
-            />
-          </div>
-        );
-      })}
+      {!reviews.length ? (
+        <p className={styles.noResult}>추가된 오답이 없습니다</p>
+      ) : (
+        reviews.map((review) => {
+          return (
+            <div key={review.question} className={styles.reviewBlock}>
+              <ProblemInfo
+                category={review.category}
+                difficulty={review.difficulty}
+                count={review.count}
+              />
+              <QuestionAnswer
+                question={review.question}
+                answers={review.answers}
+                correctAnswer={review.correctAnswer}
+              />
+            </div>
+          );
+        })
+      )}
     </div>
   );
 };
