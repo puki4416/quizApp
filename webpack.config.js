@@ -55,6 +55,7 @@ module.exports = {
       overlay: true,
       progress: true,
     },
+    historyApiFallback: true,
   },
   output: {
     path: path.join(__dirname, "build"),
