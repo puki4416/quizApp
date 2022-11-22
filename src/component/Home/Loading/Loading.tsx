@@ -10,7 +10,7 @@ const Loading = ({ active }: LoadingProps) => {
     return (
       <div className={styles.mainBlock}>
         <img src="./spinner.gif" alt="spinner" className={styles.spinner} />
-        <div className={styles.text}>퀴즈 문제를 생성중입니다</div>
+        <p className={styles.text}>퀴즈 문제를 생성중입니다</p>
       </div>
     );
   }

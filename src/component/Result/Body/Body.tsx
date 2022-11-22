@@ -16,8 +16,8 @@ const Body = () => {
   useSaveWrong({ wrongNumbers: result.wrongNumbers, quizList });
   useInitial(true);
   return (
-    <div className={styles.mainBlock}>
-      <div className={styles.title}>퀴즈결과</div>
+    <main className={styles.mainBlock}>
+      <h2 className={styles.title}>퀴즈결과</h2>
       <Chart correctAmount={result.correct} wrongAmount={result.wrong} />
       <TextInfo
         startTime={result.startTime}
@@ -27,7 +27,7 @@ const Body = () => {
       <Link to={"/reviewnote"} className={styles.moveButton}>
         오답노트로 이동하기
       </Link>
-    </div>
+    </main>
   );
 };
 

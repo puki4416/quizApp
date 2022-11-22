@@ -14,15 +14,15 @@ const QuestionAnswer = ({
 }: QuestionAnswerProps) => {
   return (
     <div className={styles.mainBlock}>
-      <div className={styles.question}>{decode(question)}</div>
-      <div className={styles.answer}>
+      <h3 className={styles.question}>{decode(question)}</h3>
+      <ul className={styles.answer}>
         {answers.map((answer, index) => (
-          <div
+          <li
             className={correctAnswer === answer ? styles.correct : ""}
             key={answer}
-          >{`${index + 1}. ${decode(answer)}`}</div>
+          >{`${index + 1}. ${decode(answer)}`}</li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };

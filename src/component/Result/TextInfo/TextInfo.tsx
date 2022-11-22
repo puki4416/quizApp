@@ -9,17 +9,17 @@ interface TextInfoProps {
 
 const TextInfo = ({ startTime, correct, wrong }: TextInfoProps) => {
   return (
-    <div className={styles.mainBlock}>
-      <div className={styles.text}>
+    <ul className={styles.mainBlock}>
+      <li className={styles.text}>
         {`소요 시간 : 
       ${makeUseTime(
         new Date().getTime() -
           (startTime !== undefined ? startTime?.getTime() : 0)
       )}`}
-      </div>
-      <div className={styles.text}>{`정답 수 : ${correct}`}</div>
-      <div className={styles.text}>{`오답 수 : ${wrong}`}</div>
-    </div>
+      </li>
+      <li className={styles.text}>{`정답 수 : ${correct}`}</li>
+      <li className={styles.text}>{`오답 수 : ${wrong}`}</li>
+    </ul>
   );
 };
 

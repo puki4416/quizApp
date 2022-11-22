@@ -20,7 +20,7 @@ const Body = () => {
   });
 
   return (
-    <div className={styles.mainBlock}>
+    <main className={styles.mainBlock}>
       <h2 className={styles.title}>Quiz</h2>
       <SelectBox
         title={"문제수"}
@@ -44,7 +44,7 @@ const Body = () => {
         퀴즈 풀기
       </QuizStartButton>
       <Loading active={active} />
-    </div>
+    </main>
   );
 };
 

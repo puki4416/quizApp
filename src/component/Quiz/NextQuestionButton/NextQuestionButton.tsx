@@ -13,9 +13,9 @@ const NextQuestionButton = ({
 }: AnswerProps) => {
   if (status === "End") {
     return (
-      <div className={styles.mainBlock} onClick={eventHandler}>
+      <button className={styles.mainBlock} onClick={eventHandler}>
         {children}
-      </div>
+      </button>
     );
   }
   return null;

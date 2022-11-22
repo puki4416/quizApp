@@ -37,7 +37,7 @@ const Body = () => {
   useInitial(final);
 
   return (
-    <div className={styles.mainBlock}>
+    <main className={styles.mainBlock}>
       <Info
         category={quizList[order].category}
         difficulty={quizList[order].difficulty}
@@ -58,7 +58,7 @@ const Body = () => {
         다음
       </NextButton>
       <ResultModal status={status} />
-    </div>
+    </main>
   );
 };
 

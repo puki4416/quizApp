@@ -11,10 +11,10 @@ const Body = () => {
   const selectRef = useRef<HTMLSelectElement>(null);
   const [page, setPage] = useState(1);
   return (
-    <div className={styles.mainBlock}>
+    <main className={styles.mainBlock}>
       <div className={styles.titleBlock}>
         <div className={styles.dummy}></div>
-        <div className={styles.title}>오답노트</div>
+        <h2 className={styles.title}>오답노트</h2>
         <SortSelect selectRef={selectRef} eventHander={changeSort} />
       </div>
       {!reviews.length ? (
@@ -22,7 +22,7 @@ const Body = () => {
       ) : (
         reviews.slice((page - 1) * 10, page * 10).map((review, index) => {
           return (
-            <div key={review.question} className={styles.reviewBlock}>
+            <section key={review.question} className={styles.reviewBlock}>
               <ProblemInfo
                 category={review.category}
                 difficulty={review.difficulty}
@@ -35,7 +35,7 @@ const Body = () => {
                 answers={review.answers}
                 correctAnswer={review.correctAnswer}
               />
-            </div>
+            </section>
           );
         })
       )}
@@ -46,7 +46,7 @@ const Body = () => {
         pageUnit={5}
         eventHander={setPage}
       />
-    </div>
+    </main>
   );
 };
 

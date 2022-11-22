@@ -1,6 +1,6 @@
 .mainBlock {
   border-radius: 5px;
-  width: 580px;
+  width: 602px;
   margin: 40px 0 0 0;
   font-size: 20px;
   display: flex;
@@ -11,4 +11,5 @@
   background-color: skyblue;
   color: white;
   cursor: pointer;
+  border: none;
 }

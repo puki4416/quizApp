@@ -17,7 +17,7 @@ const SelectBox = ({
   selectRef,
 }: SelectBoxProps) => {
   return (
-    <div>
+    <section>
       <h3 className={styles.title}>{title}</h3>
       <select
         defaultValue={defaultValue}
@@ -32,7 +32,7 @@ const SelectBox = ({
           );
         })}
       </select>
-    </div>
+    </section>
   );
 };
 
