@@ -4,7 +4,7 @@ import Home from "./page/Home";
 import Quiz from "./page/Quiz";
 import Result from "./page/Result";
 import ReviewNote from "./page/ReviewNote";
-import PrivateRoute from "./PrivateRoute";
+import PrivateRoute from "./privateRoute";
 import { ReducerType } from "./store";
 
 function App() {
