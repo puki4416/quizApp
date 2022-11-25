@@ -10,8 +10,10 @@ describe("makeClassName 함수 테스트", () => {
       "wrongClass",
       "End"
     );
+
     expect(className).toEqual("correctClass");
   });
+
   it("원하는 상태이고 일치하지 않고 클릭된 경우", () => {
     const className = makeClassName(
       false,
@@ -21,8 +23,10 @@ describe("makeClassName 함수 테스트", () => {
       "wrongClass",
       "End"
     );
+
     expect(className).toEqual("wrongClass");
   });
+
   it("원하는 상태가 아닌 경우", () => {
     const className = makeClassName(
       false,
@@ -32,6 +36,7 @@ describe("makeClassName 함수 테스트", () => {
       "wrongClass",
       "End"
     );
+
     expect(className).toEqual("");
   });
 });

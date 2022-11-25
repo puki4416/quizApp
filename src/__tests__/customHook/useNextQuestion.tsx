@@ -36,6 +36,7 @@ describe("useNextQuestion 테스트", () => {
       type: "quizStatus/setWait",
     });
   });
+
   it("다음 문제로 넘어가는 경우", async () => {
     const setOrderMocked = jest.fn();
     const { result } = renderHook(

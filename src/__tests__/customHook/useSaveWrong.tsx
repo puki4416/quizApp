@@ -52,10 +52,12 @@ describe("useSaveWrong Hook 테스트", () => {
           ),
       })
     );
+
     expect(localStorage.getItem("wrongQuiz")).toEqual(
       JSON.stringify([{ question: "test1", count: 1, date: new Date() }])
     );
   });
+
   it("local스토리지에 중복된 오답이 있는 경우", () => {
     renderHook(() =>
       useSaveWrong({
@@ -68,6 +70,7 @@ describe("useSaveWrong Hook 테스트", () => {
           ),
       })
     );
+
     expect(localStorage.getItem("wrongQuiz")).toEqual(
       JSON.stringify([{ question: "test1", count: 2, date: new Date() }])
     );

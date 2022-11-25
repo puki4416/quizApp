@@ -41,7 +41,9 @@ describe("useReview Hook 테스트", () => {
         { date: new Date(2022, 1, 1), answers: [1, 2, 3, 4] },
       ])
     );
+
     const { result } = renderHook(() => useReview());
+
     expect(result.current.reviews).toEqual([
       {
         date: JSON.parse(JSON.stringify(new Date(2022, 3, 1))),
@@ -67,10 +69,13 @@ describe("useReview Hook 테스트", () => {
         { date: new Date(2022, 1, 1), answers: [1, 2, 3, 4] },
       ])
     );
+
     const { result } = renderHook(() => useReview());
+
     act(() => {
       result.current.changeSort("recent");
     });
+
     expect(result.current.reviews).toEqual([
       {
         date: JSON.parse(JSON.stringify(new Date(2022, 3, 1))),
@@ -96,10 +101,13 @@ describe("useReview Hook 테스트", () => {
         { count: 3, answers: [1, 2, 3, 4] },
       ])
     );
+
     const { result } = renderHook(() => useReview());
+
     act(() => {
       result.current.changeSort("manyCount");
     });
+
     expect(result.current.reviews).toEqual([
       { count: 3, answers: [1, 2, 3, 4] },
       { count: 2, answers: [1, 2, 3, 4] },
@@ -116,10 +124,13 @@ describe("useReview Hook 테스트", () => {
         { difficulty: "easy", answers: [1, 2, 3, 4] },
       ])
     );
+
     const { result } = renderHook(() => useReview());
+
     act(() => {
       result.current.changeSort("difficulty");
     });
+
     expect(result.current.reviews).toEqual([
       { difficulty: "easy", answers: [1, 2, 3, 4] },
       { difficulty: "medium", answers: [1, 2, 3, 4] },

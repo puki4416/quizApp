@@ -22,6 +22,7 @@ describe("usePreventMove Hook 테스트", () => {
     expect(mockedUsedNavigate).toBeCalledTimes(1);
     expect(mockedUsedNavigate).toBeCalledWith("/home");
   });
+
   it("주소가 처음 설정한 경로이고, 이동을 수락하지 않은 경우", () => {
     mockedUsedLocation.mockReturnValueOnce({ pathname: "/quiz" });
     window.confirm = jest.fn().mockReturnValueOnce(false);
@@ -29,6 +30,7 @@ describe("usePreventMove Hook 테스트", () => {
     result.current("/home", "홈");
     expect(mockedUsedNavigate).toBeCalledTimes(0);
   });
+
   it("주소가 처음 설정한 경로가 아닌경우", () => {
     mockedUsedLocation.mockReturnValueOnce({ pathname: "/result" });
     const { result } = renderHook(() => usePreventMove("/quiz"));

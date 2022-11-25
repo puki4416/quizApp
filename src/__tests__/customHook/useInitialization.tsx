@@ -20,10 +20,12 @@ describe("useInitial Hook 테스트", () => {
       payload: undefined,
       type: "quizList/initializeQuizList",
     });
+
     expect(mockStore.getActions()[1]).toEqual({
       payload: undefined,
       type: "quizResult/initializeQuiz",
     });
+
     expect(mockStore.getActions()[2]).toEqual({
       payload: undefined,
       type: "quizStatus/setWait",

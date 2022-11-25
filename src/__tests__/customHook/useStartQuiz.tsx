@@ -34,7 +34,9 @@ describe("useStartQuiz 테스트", () => {
         wrapper,
       }
     );
+
     result.current();
+
     expect(mockStore.getActions()[0]).toEqual({
       payload: {
         amount: "10",

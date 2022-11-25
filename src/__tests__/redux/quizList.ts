@@ -86,6 +86,7 @@ describe("quizList 테스트", () => {
       expect(actual.loading).toEqual(false);
       expect(actual.error).toEqual(true);
     });
+
     it("initializeQuizList가 발생한 경우", () => {
       const actual = quizListSlice(initialState, initializeQuizList());
       expect(actual.content).toEqual(undefined);

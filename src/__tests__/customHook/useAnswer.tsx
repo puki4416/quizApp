@@ -21,9 +21,11 @@ describe("useAnswer Hook 테스트", () => {
         wrapper,
       }
     );
+
     act(() => {
       result.current("test1");
     });
+
     expect(mockStore.getActions()[0]).toEqual({
       payload: undefined,
       type: "quizStatus/setSuccess",
@@ -42,9 +44,11 @@ describe("useAnswer Hook 테스트", () => {
         wrapper,
       }
     );
+
     act(() => {
       result.current("test2");
     });
+
     expect(mockStore.getActions()[1]).toEqual({
       payload: 1,
       type: "quizStatus/setFail",

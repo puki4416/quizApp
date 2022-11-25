@@ -25,6 +25,7 @@ describe("usePreventBack Hook 테스트", () => {
       expect.any(Function)
     );
   });
+
   it("뒤로가기 버튼을 눌렀을때 확인을 누른경우", () => {
     window.confirm = jest.fn().mockReturnValue(1);
     const target = "/quiz";
@@ -37,6 +38,7 @@ describe("usePreventBack Hook 테스트", () => {
       expect.any(Function)
     );
   });
+
   it("뒤로가기 버튼을 눌렀을때 거절을 누른경우", () => {
     window.confirm = jest.fn().mockReturnValue(0);
     const target = "/quiz";

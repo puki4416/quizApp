@@ -16,18 +16,22 @@ describe("quizList 테스트", () => {
       const actual = quizStatusSlice(initialState, setWait());
       expect(actual.status).toEqual("Wait");
     });
+
     it("setProgress가 발생한 경우", () => {
       const actual = quizStatusSlice(initialState, setProgress());
       expect(actual.status).toEqual("Progress");
     });
+
     it("setSuccess가 발생한 경우", () => {
       const actual = quizStatusSlice(initialState, setSuccess());
       expect(actual.status).toEqual("Success");
     });
+
     it("setFail가 발생한 경우", () => {
       const actual = quizStatusSlice(initialState, setFail(1));
       expect(actual.status).toEqual("Fail");
     });
+
     it("setEnd가 발생한 경우", () => {
       const actual = quizStatusSlice(initialState, setEnd());
       expect(actual.status).toEqual("End");

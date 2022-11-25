@@ -24,6 +24,7 @@ describe("quizList 테스트", () => {
       const actual = quizResultSlice(initialState, correctQuiz());
       expect(actual.correct).toEqual(1);
     });
+
     it("wrongQuiz가 발생한 경우", () => {
       const actual = quizResultSlice(initialState, wrongQuiz(1));
       expect(actual.wrong).toEqual(1);
