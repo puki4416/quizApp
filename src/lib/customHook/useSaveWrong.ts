@@ -9,17 +9,18 @@ interface useSaveWrongProps {
 
 const useSaveWrong = ({ wrongNumbers, quizList }: useSaveWrongProps) => {
   useEffect(() => {
-    const output = localStorage.getItem("wrongQuiz");
-    const arr = output !== null ? JSON.parse(output) : [];
+    const localStorageJsonData = localStorage.getItem("wrongQuiz");
+    const localStorageParsedData =
+      localStorageJsonData !== null ? JSON.parse(localStorageJsonData) : [];
     const newWrongAnswers = wrongNumbers
       .map((number) => ({ ...quizList[number], count: 1, date: new Date() }))
       .filter((quiz) => {
         let flag = true;
-        arr.forEach(({ question }: any, index: number) => {
+        localStorageParsedData.forEach(({ question }: any, index: number) => {
           if (decode(question) === quiz.question) {
             flag = false;
-            arr[index].count += 1;
-            arr[index].date = new Date();
+            localStorageParsedData[index].count += 1;
+            localStorageParsedData[index].date = new Date();
           }
         });
         return flag;
@@ -27,7 +28,7 @@ const useSaveWrong = ({ wrongNumbers, quizList }: useSaveWrongProps) => {
 
     localStorage.setItem(
       "wrongQuiz",
-      JSON.stringify(arr.concat(newWrongAnswers))
+      JSON.stringify(localStorageParsedData.concat(newWrongAnswers))
     );
   }, []);
 };

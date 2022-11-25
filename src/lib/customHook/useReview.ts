@@ -10,9 +10,10 @@ interface QuizReview extends QuizContentState {
 const useReview = () => {
   const [reviews, setReviews] = useState<QuizReview[]>([]);
   useLayoutEffect(() => {
-    const output = localStorage.getItem("wrongQuiz");
-    const arr: QuizReview[] = output !== null ? JSON.parse(output) : [];
-    changeSort("recent", arr);
+    const localStorageJsonData = localStorage.getItem("wrongQuiz");
+    const localStorageParsedData: QuizReview[] =
+      localStorageJsonData !== null ? JSON.parse(localStorageJsonData) : [];
+    changeSort("recent", localStorageParsedData);
   }, []);
 
   const changeSort = (type: string, newreviews: QuizReview[] = reviews) => {
