@@ -2,6 +2,7 @@ import { useRef } from "react";
 import styles from "./Answer.module.css";
 import { decode } from "html-entities";
 import makeClassName from "../../../lib/businessFn/makeClassName";
+import { QUIZ_END } from "../../../lib/constant/quizState";
 
 interface AnswerProps {
   content: string;
@@ -21,7 +22,7 @@ const Answer = ({ content, eventHandler, correct, status }: AnswerProps) => {
         status,
         styles.correct,
         styles.wrong,
-        "End"
+        QUIZ_END
       )}`}
       onClick={() => {
         eventHandler();

@@ -1,3 +1,4 @@
+import { QUIZ_END } from "../../../lib/constant/quizState";
 import styles from "./NextQuestionButton.module.css";
 
 interface AnswerProps {
@@ -11,7 +12,7 @@ const NextQuestionButton = ({
   eventHandler,
   status,
 }: AnswerProps) => {
-  if (status === "End") {
+  if (status === QUIZ_END) {
     return (
       <button className={styles.mainBlock} onClick={eventHandler}>
         {children}

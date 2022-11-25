@@ -1,14 +1,15 @@
 import makeClassName from "../../lib/businessFn/makeClassName";
+import { QUIZ_END, QUIZ_WAIT } from "../../lib/constant/quizState";
 
 describe("makeClassName 함수 테스트", () => {
   it("원하는 상태이고 일치하는 경우", () => {
     const className = makeClassName(
       true,
       false,
-      "End",
+      QUIZ_END,
       "correctClass",
       "wrongClass",
-      "End"
+      QUIZ_END
     );
 
     expect(className).toEqual("correctClass");
@@ -18,10 +19,10 @@ describe("makeClassName 함수 테스트", () => {
     const className = makeClassName(
       false,
       true,
-      "End",
+      QUIZ_END,
       "correctClass",
       "wrongClass",
-      "End"
+      QUIZ_END
     );
 
     expect(className).toEqual("wrongClass");
@@ -31,10 +32,10 @@ describe("makeClassName 함수 테스트", () => {
     const className = makeClassName(
       false,
       false,
-      "Wait",
+      QUIZ_WAIT,
       "correctClass",
       "wrongClass",
-      "End"
+      QUIZ_END
     );
 
     expect(className).toEqual("");

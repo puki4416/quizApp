@@ -3,6 +3,7 @@ import configureMockStore from "redux-mock-store";
 import { ReactNode } from "react";
 import useAnswer from "../../lib/customHook/useAnswer";
 import { act, renderHook } from "@testing-library/react";
+import { QUIZ_PROGRESS } from "../../lib/constant/quizState";
 
 describe("useAnswer Hook 테스트", () => {
   const mockStore = configureMockStore()();
@@ -13,7 +14,7 @@ describe("useAnswer Hook 테스트", () => {
     const { result } = renderHook(
       () =>
         useAnswer({
-          status: "Progress",
+          status: QUIZ_PROGRESS,
           correctAnswer: "test1",
           order: 1,
         }),
@@ -36,7 +37,7 @@ describe("useAnswer Hook 테스트", () => {
     const { result } = renderHook(
       () =>
         useAnswer({
-          status: "Progress",
+          status: QUIZ_PROGRESS,
           correctAnswer: "test1",
           order: 1,
         }),

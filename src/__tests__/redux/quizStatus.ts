@@ -8,33 +8,40 @@ import quizStatusSlice, {
 } from "../../store/quizStatus/reducer";
 import { timer } from "../../lib/businessFn/asyncWork";
 import { showResult } from "../../store/quizStatus/Saga";
+import {
+  QUIZ_END,
+  QUIZ_FAIL,
+  QUIZ_PROGRESS,
+  QUIZ_SUCCESS,
+  QUIZ_WAIT,
+} from "../../lib/constant/quizState";
 
 describe("quizList 테스트", () => {
   describe("reducer 테스트", () => {
-    const initialState = { status: "Wait" };
+    const initialState = { status: QUIZ_WAIT };
     it("setWait가 발생한 경우", () => {
       const actual = quizStatusSlice(initialState, setWait());
-      expect(actual.status).toEqual("Wait");
+      expect(actual.status).toEqual(QUIZ_WAIT);
     });
 
     it("setProgress가 발생한 경우", () => {
       const actual = quizStatusSlice(initialState, setProgress());
-      expect(actual.status).toEqual("Progress");
+      expect(actual.status).toEqual(QUIZ_PROGRESS);
     });
 
     it("setSuccess가 발생한 경우", () => {
       const actual = quizStatusSlice(initialState, setSuccess());
-      expect(actual.status).toEqual("Success");
+      expect(actual.status).toEqual(QUIZ_SUCCESS);
     });
 
     it("setFail가 발생한 경우", () => {
       const actual = quizStatusSlice(initialState, setFail(1));
-      expect(actual.status).toEqual("Fail");
+      expect(actual.status).toEqual(QUIZ_FAIL);
     });
 
     it("setEnd가 발생한 경우", () => {
       const actual = quizStatusSlice(initialState, setEnd());
-      expect(actual.status).toEqual("End");
+      expect(actual.status).toEqual(QUIZ_END);
     });
   });
 });

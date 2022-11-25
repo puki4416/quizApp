@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { setFail, setSuccess } from "../../store/quizStatus/reducer";
+import { QUIZ_PROGRESS } from "../constant/quizState";
 
 interface useAnswerProps {
   status: string;
@@ -10,7 +11,7 @@ interface useAnswerProps {
 const useAnswer = ({ status, correctAnswer, order }: useAnswerProps) => {
   const dispatch = useDispatch();
   return (answer: string) => {
-    if (status === "Progress") {
+    if (status === QUIZ_PROGRESS) {
       dispatch(answer === correctAnswer ? setSuccess() : setFail(order));
     }
   };

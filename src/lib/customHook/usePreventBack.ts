@@ -1,5 +1,6 @@
 import { useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { ALRET_MOVE_BACK } from "../constant/alert";
 
 interface usePreventBackProps {
   target: string;
@@ -9,11 +10,7 @@ const usePreventBack = ({ target }: usePreventBackProps) => {
   const navigate = useNavigate();
 
   const preventGoBack = useCallback(() => {
-    if (
-      window.confirm(
-        "뒤로 이동하면 진행중인 정보가 초기화됩니다 정말 이동하시겠습니까?"
-      )
-    ) {
+    if (window.confirm(ALRET_MOVE_BACK)) {
       navigate(-1);
     } else {
       window.history.pushState(null, "", target);

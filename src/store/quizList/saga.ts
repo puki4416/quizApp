@@ -8,6 +8,7 @@ import { startQuiz } from "../quizResult/reducer";
 import { setProgress } from "../quizStatus/reducer";
 import { axiosGetQuizList } from "../../lib/businessFn/asyncWork";
 import { makeAnswers } from "../../lib/businessFn/makeAnswers";
+import { ALRET_ERROR } from "../../lib/constant/alert";
 
 interface QuizApiData {
   response_code: 0;
@@ -50,7 +51,7 @@ export function* getServerQuizList(action: {
     yield action.payload.navigate("/quiz");
   } catch (error) {
     yield put(getQuizListFailure());
-    yield window.alert("알수없는 에러가 발생하였습니다 다시 시도해주세요");
+    yield window.alert(ALRET_ERROR);
   }
 }
 
